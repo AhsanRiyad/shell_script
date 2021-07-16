@@ -1,15 +1,24 @@
 #!/bin/bash
 
+basePath='/home/riyad/Dev/Projects/gitlab/github/';
 
-echo "Started script, welcome";
-read -p 'Enter commit msg' commitMsg;
-cd /home/riyad/Dev/Projects/gitlab/github/test/mygov_std_portal;
-password='Ahsan111@';
+echo Started script, welcome;
+
+read -p 'Enter commit msg ' commitMsg;
+
+cd {basePath}myGov_documents;
+git add .
+git commit -m $commitMsg;
+git push;
+
+
+cd ${basePath}mygov_std_portal;
+password='az5YB&,ua2fN_q%';
 branch='riyad';
-expect /home/riyad/Dev/Projects/gitlab/github/test/expect.exp $password;
+expect ${basePath}expect.exp $password;
 git stash;
 git checkout riyad;
-sh /home/riyad/Dev/Projects/gitlab/github/test/copy.sh;
+sh ${basePath}copy.sh $basePath;
 git add .
 git commit -m ${commitMsg}
-expect /home/riyad/Dev/Projects/gitlab/github/test/push.exp $password $branch;
+expect ${basePath}push.exp $password $branch;
