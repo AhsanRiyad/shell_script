@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 basePath='/home/riyad/Dev/Projects/gitlab/github/';
 
@@ -6,7 +6,7 @@ echo Started script, welcome;
 
 read -p 'Enter commit msg ' commitMsg;
 
-cd {basePath}myGov_documents;
+cd ${basePath}myGov_documents;
 git add .
 git commit -m $commitMsg;
 git push;

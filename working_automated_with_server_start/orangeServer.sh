@@ -1,7 +1,7 @@
-#! bin/bash
+#!/bin/sh
 
 
-echo hellow world;
+echo Starting OrangeBD server;
 
 basePath='/home/riyad/Dev/Projects/gitlab/github/';
 
