@@ -1,0 +1,15 @@
+#!/usr/bin/expect -f
+
+
+set timeout 20
+
+set password [lindex $argv 0]
+set branch [lindex $argv 1]
+
+spawn git push -u origin $branch
+
+expect "Password for 'https://riyadahsan@bitbucket.org':"
+
+send "$password\n";
+
+interact
